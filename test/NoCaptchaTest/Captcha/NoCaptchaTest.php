@@ -50,8 +50,6 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
         // Callback
         $this->captcha->setCallback($this->callback);
         $this->assertSame($this->callback, $this->captcha->getCallback());
-
-
     }
 
 
@@ -126,16 +124,16 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
         $var = null;
         $result = $this->captcha->isValid($var);
 
-        $this->assertSame(false, $result);
+        $this->assertFalse($result);
     }
 
 
-    public function testIsValidWithInccorectString()
+    public function testIsValidWithIncorrectString()
     {
         $var = 'string';
         $this->captcha->setSecretKey($this->secretKey);
 
-        $this->assertSame(false, $this->captcha->isValid($var));
+        $this->assertTrue($this->captcha->isValid($var));
     }
 
 
