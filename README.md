@@ -99,9 +99,12 @@ Last step is to render captcha input in your view:
             'type' => 'image',
             'messages' => array(
                 'errCaptcha' => 'Custom message when google API return false'
+            ),
+            'service_options' => array(
+                'adapter' => 'Zend\Http\Client\Adapter\Curl', // override default HttpClient adapter options
             )
         );
-        
+
         $captcha = new \NoCaptcha\Captcha\Recaptcha($options);
 ```
 Or you can use setters

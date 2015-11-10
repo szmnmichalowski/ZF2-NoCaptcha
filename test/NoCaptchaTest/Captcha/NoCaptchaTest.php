@@ -110,6 +110,20 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($options['theme'], $this->captcha->getTheme());
     }
 
+    public function testRecaptchaServiceOptions()
+    {
+        $options = array(
+            'service_options' => array(
+                'adapter' => 'Zend\Http\Client\Adapter\Curl',
+            ),
+        );
+
+        $_captcha = new ReCaptcha($options);
+
+        $adapter = $_captcha->getService()->getHttpClient()->getAdapter();
+        $this->assertInstanceOf('Zend\Http\Client\Adapter\Curl', $adapter);
+    }
+
 
     public function testSetInvalidOptions()
     {
