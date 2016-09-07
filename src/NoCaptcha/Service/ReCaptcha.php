@@ -68,6 +68,10 @@ class ReCaptcha
         if (isset($_SERVER['REMOTE_ADDR'])) {
             $this->setIp($_SERVER['REMOTE_ADDR']);
         }
+
+        if ($this->options) {
+            $this->httpClient->setOptions($this->options);
+        }
     }
 
     /**
