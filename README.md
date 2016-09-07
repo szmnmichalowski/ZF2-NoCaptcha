@@ -97,6 +97,7 @@ Last step is to render captcha input in your view:
             'secret_key' => 'YOUR_SECRET_KEY',
             'theme' => 'dark',
             'type' => 'image',
+            'size' => 'normal',
             'messages' => array(
                 'errCaptcha' => 'Custom message when google API return false'
             ),
@@ -113,6 +114,7 @@ Or you can use setters
         $captcha->setSecretKey($secretKey);
         $captcha->setTheme('dark');
         $captcha->setType('image');
+        $captcha->setSize('normal');
 ```
 
 NoCaptcha uses **Zend\Http\Client** to verify if captcha is valid. If for some reasons you want to pass additional settings to Client class, you can do this by:
@@ -133,5 +135,9 @@ Theme:<br/>
 Type: <br/>
 - image (default)
 - audio
+
+Size: <br/>
+- normal (default)
+- compact
 
 More information about options you can find at [https://developers.google.com/recaptcha/docs/display](https://developers.google.com/recaptcha/docs/display)
