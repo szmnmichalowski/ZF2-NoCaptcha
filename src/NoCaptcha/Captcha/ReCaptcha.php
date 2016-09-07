@@ -35,6 +35,13 @@ class ReCaptcha extends AbstractAdapter
     protected $type = 'image';
 
     /**
+     * normal | compact
+     *
+     * @var string
+     */
+    protected $size = 'normal';
+
+    /**
      * @var string
      */
     protected $callback = 'recaptchaCallback';
@@ -198,6 +205,22 @@ class ReCaptcha extends AbstractAdapter
     {
         $this->type = $type;
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * @param string $size
+     */
+    public function setSize($size)
+    {
+        $this->size = $size;
     }
 
 

@@ -58,6 +58,7 @@ class ReCaptcha extends FormInput
             'data-sitekey' => $captcha->getSiteKey(),
             'data-theme' => $captcha->getTheme(),
             'data-type' => $captcha->getType(),
+            'data-size' => $captcha->getSize(),
             'data-callback' => $captcha->getCallback(),
         ));
 

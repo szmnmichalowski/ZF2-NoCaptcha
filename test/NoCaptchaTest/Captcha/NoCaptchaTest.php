@@ -14,6 +14,8 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
 
     protected $type = 'image';
 
+    protected $size = 'normal';
+
     protected $callback = 'recaptchaCallback';
 
     /**
@@ -47,6 +49,10 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
         $this->captcha->setType($this->type);
         $this->assertSame($this->type, $this->captcha->getType());
 
+        // Size
+        $this->captcha->setSize($this->size);
+        $this->assertSame($this->size, $this->captcha->getSize());
+
         // Callback
         $this->captcha->setCallback($this->callback);
         $this->assertSame($this->callback, $this->captcha->getCallback());
@@ -64,6 +70,7 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
         $options = array(
             'theme' => 'dark',
             'type' => 'image',
+            'size' => 'compact',
             'callback' => 'recaptchaCallback'
         );
 
@@ -72,6 +79,7 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame($options['theme'], $_options['theme']);
         $this->assertSame($options['type'], $_options['type']);
+        $this->assertSame($options['size'], $_options['size']);
         $this->assertSame($options['callback'], $_options['callback']);
     }
 
@@ -81,6 +89,7 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
         $options = array(
             'theme' => 'dark',
             'type' => 'image',
+            'size' => 'compact',
             'callback' => 'recaptchaCallback'
         );
 
@@ -91,6 +100,7 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame($options['theme'], $_options['theme']);
         $this->assertSame($options['type'], $_options['type']);
+        $this->assertSame($options['size'], $_options['size']);
         $this->assertSame($options['callback'], $_options['callback']);
 
         $_captcha = new ReCaptcha($config);
