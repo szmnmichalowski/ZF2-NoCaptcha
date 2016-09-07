@@ -40,7 +40,7 @@ class Response
      */
     public function setFromResponseObj(HttpResponse $response)
     {
-        $content = json_decode($response->getContent(), true);
+        $content = json_decode($response->getBody(), true);
 
 
         if (array_key_exists('success', $content)) {
