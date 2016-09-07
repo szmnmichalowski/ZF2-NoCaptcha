@@ -63,7 +63,7 @@ class ReCaptchaTest extends \PHPUnit_Framework_TestCase
         $this->service->setSecretKey($this->secretKey);
         $response = $this->service->verify($var);
 
-        $this->assertSame(false, $response->getStatus());
+        $this->assertTrue($response->getStatus());
     }
 
 

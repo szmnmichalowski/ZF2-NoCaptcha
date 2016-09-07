@@ -32,7 +32,6 @@ class Response
         }
     }
 
-
     /**
      * @param HttpResponse $response
      *
@@ -40,15 +39,10 @@ class Response
      */
     public function setFromResponseObj(HttpResponse $response)
     {
-        $content = json_decode($response->getBody(), true);
-
-
-        if (array_key_exists('success', $content)) {
-            $this->setStatus($content['success']);
-        }
-
-        if (array_key_exists('error', $content)) {
-            $this->setError($content['error']);
+        if ($response->isSuccess()) {
+            $this->setStatus($response->isSuccess());
+        } else {
+            $this->setError($response->getReasonPhrase());
         }
 
         return $this;

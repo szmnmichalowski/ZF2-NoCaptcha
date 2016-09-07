@@ -68,7 +68,10 @@ class ReCaptcha extends AbstractAdapter
      */
     public function __construct($options = null)
     {
-        $this->setService(new ReCaptchaService());
+        $options = $options === null ? [] : $options;
+        $serviceOptions = array_key_exists('service_options', $options) ? $options['service_options']: null;
+
+        $this->setService(new ReCaptchaService(null, $serviceOptions));
 
         parent::__construct($options);
 
