@@ -48,7 +48,7 @@ After you register your site you will get:
 Without this two keys, module won't work correctly 
 
 **3.**
-Pass these keys to **\NoCaptcha\Captcha\Recaptcha** class
+Pass these keys to **\NoCaptcha\Captcha\ReCaptcha** class
 
 **Example #1: Basic**
 
@@ -58,7 +58,7 @@ Pass these keys to **\NoCaptcha\Captcha\Recaptcha** class
             'secret_key' => 'YOUR_SECRET_KEY',
         );
         
-        $captcha = new \NoCaptcha\Captcha\Recaptcha($options);
+        $captcha = new \NoCaptcha\Captcha\ReCaptcha($options);
 ```
 In your form class:
 ```
@@ -71,7 +71,7 @@ In your form class:
             ),
             'options' => array(
                 'label' => 'Are you a bot?',
-                'captcha' => $captcha // <-- Object of NoCaptcha\Captcha\Recaptcha
+                'captcha' => $captcha // <-- Object of NoCaptcha\Captcha\ReCaptcha
             )
         ));
         ...
