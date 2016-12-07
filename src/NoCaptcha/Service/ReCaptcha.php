@@ -104,6 +104,7 @@ class ReCaptcha
             $this->httpClient->setOptions($this->options);
         }
 
+        $this->httpClient->setMethod('POST');
         $response = $this->httpClient->send();
 
         return new CaptchaResponse($response);
