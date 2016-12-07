@@ -39,7 +39,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
 
         $this->response->setFromResponseObj($httpResponse);
 
-        $this->assertSame(true, $this->response->getStatus());
+        $this->assertSame(false, $this->response->getStatus());
     }
 
 
@@ -51,6 +51,6 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
 
         $response = new CaptchaResponse($httpResponse);
 
-        $this->assertSame(true, $response->getStatus());
+        $this->assertSame(false, $response->getStatus());
     }
 }

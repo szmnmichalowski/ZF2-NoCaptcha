@@ -57,13 +57,13 @@ class ReCaptchaTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('NoCaptcha\Service\Response', $this->service->verify($var));
     }
 
-    public function testVerifyWithIncorrectParam()
+    public function testDoNotVerifyWithIncorrectParam()
     {
         $var = 'string';
         $this->service->setSecretKey($this->secretKey);
         $response = $this->service->verify($var);
 
-        $this->assertTrue($response->getStatus());
+        $this->assertFalse($response->getStatus());
     }
 
 

@@ -152,12 +152,12 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
     }
 
 
-    public function testIsValidWithIncorrectString()
+    public function testIsNotValidWithIncorrectString()
     {
         $var = 'string';
         $this->captcha->setSecretKey($this->secretKey);
 
-        $this->assertTrue($this->captcha->isValid($var));
+        $this->assertFalse($this->captcha->isValid($var));
     }
 
 
