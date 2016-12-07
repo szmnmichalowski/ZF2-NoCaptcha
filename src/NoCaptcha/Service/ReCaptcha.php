@@ -98,7 +98,7 @@ class ReCaptcha
         }
 
         $this->httpClient->setUri(self::VERIFY_SERVER);
-        $this->httpClient->setParameterGet($params);
+        $this->httpClient->setParameterPost($params);
 
         if ($this->options) {
             $this->httpClient->setOptions($this->options);
