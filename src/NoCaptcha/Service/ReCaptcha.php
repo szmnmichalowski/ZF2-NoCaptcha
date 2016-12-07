@@ -94,7 +94,7 @@ class ReCaptcha
         );
 
         if ($this->ip !== null) {
-            $params['ip'] = $this->ip;
+            $params['remoteip'] = $this->ip;
         }
 
         $this->httpClient->setUri(self::VERIFY_SERVER);
