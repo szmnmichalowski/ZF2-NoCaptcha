@@ -40,7 +40,8 @@ class Response
     public function setFromResponseObj(HttpResponse $response)
     {
         if ($response->isSuccess()) {
-            $this->setStatus($response->isSuccess());
+            $body = json_decode($response->getBody(), true);
+            $this->setStatus((bool) isset($body['success']) ? $body['success'] : false);
         } else {
             $this->setError($response->getReasonPhrase());
         }

@@ -94,16 +94,17 @@ class ReCaptcha
         );
 
         if ($this->ip !== null) {
-            $params['ip'] = $this->ip;
+            $params['remoteip'] = $this->ip;
         }
 
         $this->httpClient->setUri(self::VERIFY_SERVER);
-        $this->httpClient->setParameterGet($params);
+        $this->httpClient->setParameterPost($params);
 
         if ($this->options) {
             $this->httpClient->setOptions($this->options);
         }
 
+        $this->httpClient->setMethod('POST');
         $response = $this->httpClient->send();
 
         return new CaptchaResponse($response);
