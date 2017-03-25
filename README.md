@@ -1,5 +1,8 @@
 ## NoCaptcha
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://travis-ci.org/szmnmichalowski/ZF2-NoCaptcha.svg?branch=master)](https://travis-ci.org/szmnmichalowski/ZF2-NoCaptcha)
+
 NoCaptcha is a [Zend Framework 2](http://framework.zend.com/) module which is integrated with new version of Google reCAPTCHA.<br/>
 More info about ["No CAPTCHA reCAPTCHA"](http://googleonlinesecurity.blogspot.com/2014/12/are-you-robot-introducing-no-captcha.html)
 
