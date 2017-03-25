@@ -28,6 +28,7 @@ class NoCaptchaTest extends \PHPUnit_Framework_TestCase
     {
         $this->captcha = new ReCaptcha();
         $this->captcha->getService()->setOption('sslverifypeer', false);
+        $this->captcha->getService()->setOption('sslverifyhost', false);
     }
 
 

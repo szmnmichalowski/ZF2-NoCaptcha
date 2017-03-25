@@ -19,6 +19,7 @@ class ReCaptchaTest extends \PHPUnit_Framework_TestCase
     {
         $this->service = new ReCaptcha();
         $this->service->setOption('sslverifypeer', false);
+        $this->service->setOption('sslverifyhost', false);
     }
 
 
