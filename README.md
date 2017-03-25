@@ -1,9 +1,9 @@
-##NoCaptcha
+## NoCaptcha
 
 NoCaptcha is a [Zend Framework 2](http://framework.zend.com/) module which is integrated with new version of Google reCAPTCHA.<br/>
 More info about ["No CAPTCHA reCAPTCHA"](http://googleonlinesecurity.blogspot.com/2014/12/are-you-robot-introducing-no-captcha.html)
 
-###Installation
+### Installation
 
 You can install this module by cloning this project into your **./vendor/** directory, or using composer, which is more recommended:<br/>
 **1.**
@@ -30,7 +30,7 @@ return array(
 );
 ```
 
-###Usage
+### Usage
 
 **1.**
 Add to **layout.phtml** in head section:
@@ -126,7 +126,7 @@ $service->setOptions(array(
 ));
 ```
 
-###reCAPTCHA options
+### reCAPTCHA options
 
 Theme:<br/>
 - light (default)
