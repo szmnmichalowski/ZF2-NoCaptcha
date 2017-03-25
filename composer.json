@@ -18,7 +18,8 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7.0"
+        "php": "^5.6 || ^7.0",
+        "zendframework/zend-captcha": "2.7.1"
     },
     "require-dev": {
         "zendframework/zend-test": "^2.5"
